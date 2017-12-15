@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20171215022919) do
     t.integer "bedrooms"
     t.float "bathrooms"
     t.boolean "private_parking"
-    t.bigint "expectedPrice"
+    t.bigint "expected_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

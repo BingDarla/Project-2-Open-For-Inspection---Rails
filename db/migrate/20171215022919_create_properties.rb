@@ -6,7 +6,7 @@ class CreateProperties < ActiveRecord::Migration[5.1]
       t.integer :bedrooms
       t.float :bathrooms
       t.boolean :private_parking
-      t.bigint :expectedPrice
+      t.bigint :expected_price
       t.timestamps
     end
   end

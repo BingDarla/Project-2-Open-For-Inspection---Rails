@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OfiRails</title>
+    <title>Real eastex</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <nav>
+        <%= link_to 'Home', root_path %>
+        <% if @current_user.present? %>
+          <% if @current_user.admin? %>
+            <%= link_to "All users", users_path %>
+          <% end %>
+          <%= link_to "Edit profile", edit_user_path(@current_user) %>
+          <%= link_to "Sign Out #{ @current_user.email }", login_path, :method => 'delete' %>
+        <% else %>
+          <%= link_to 'Sign Up', new_user_path %>
+          <%= link_to 'Sign In', login_path %>
+        <% end %>
+      </nav>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

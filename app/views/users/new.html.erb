@@ -1,0 +1,19 @@
+<h1>New User</h1>
+
+<%= render 'form', user: @user %>
+
+<%= link_to 'Back', users_path %>
+<h1>Sign up</h1>
+
+
+<% if @user.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <% @user.errors.full_messages.each do |msg| %>
+      <span class="sr-only">Error:</span>
+      <%= msg %>.
+    <% end %>
+  </div>
+<% end %>
+
+<%= render :partial => 'form'%>

@@ -139,7 +139,8 @@ end
 # puts "If in pry, call function: data_ripper(bondi, 2)"
 # binding.pry
 puts "The suburbs to search are called from the bottom of this file, main.rb."
-data_ripper("bondi", 8)
-data_ripper("asquith", 8)
-data_ripper("fairfield", 8)
-data_ripper("marrickville", 8)
+# data_ripper("bondi", 8)
+# data_ripper("asquith", 8)
+# data_ripper("fairfield", 8)
+# data_ripper("marrickville", 8)
+data_ripper("newtown", 8)

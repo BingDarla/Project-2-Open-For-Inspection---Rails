@@ -34,6 +34,8 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

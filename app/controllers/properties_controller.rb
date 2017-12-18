@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+    @properties = Property.all('date')
     render :json => @properties
   end
 
@@ -72,6 +72,7 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.fetch(:property, {})
+      #params.fetch(:property, {})
+      params.require(:property).permit(:address, :suburb, :landsize, :bedrooms, :bathrooms, :private_parking, :expected_price)
     end
 end

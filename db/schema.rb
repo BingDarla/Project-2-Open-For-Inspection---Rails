@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20171216013805) do
 
   create_table "properties", force: :cascade do |t|
     t.text "address"
+    t.text "suburb"
     t.integer "landsize"
     t.integer "bedrooms"
     t.float "bathrooms"

@@ -5,11 +5,14 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
+    render :json => @properties
   end
 
   # GET /properties/1
   # GET /properties/1.json
   def show
+    property = Property.find params[:id]
+    render :json => property
   end
 
   # GET /properties/new

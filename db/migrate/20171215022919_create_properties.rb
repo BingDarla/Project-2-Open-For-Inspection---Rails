@@ -3,11 +3,11 @@ class CreateProperties < ActiveRecord::Migration[5.1]
     create_table :properties do |t|
       t.text :address
       t.text :suburb
-      t.integer :landsize
+      t.text :landsize
       t.integer :bedrooms
       t.float :bathrooms
       t.boolean :private_parking
-      t.bigint :expected_price
+      t.text :expected_price
       t.timestamps
     end
   end

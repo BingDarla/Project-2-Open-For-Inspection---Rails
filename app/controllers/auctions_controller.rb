@@ -5,6 +5,10 @@ class AuctionsController < ApplicationController
   # GET /auctions.json
   def index
     @auctions = Auction.all
+    # render :json => @auctions.to_json(:include => :user,  :property)
+
+
+
   end
 
   # GET /auctions/1
@@ -69,6 +73,6 @@ class AuctionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def auction_params
-      params.fetch(:auction, {})
+      params.require(:auction).permit(:user_id,:property_id,:price)
     end
 end

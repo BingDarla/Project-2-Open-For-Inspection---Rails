@@ -4,7 +4,8 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all('date')
+    # @properties = Property.all('date')
+    @properties = Property.all
     render :json => @properties
   end
 

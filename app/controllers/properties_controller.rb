@@ -4,17 +4,12 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-<<<<<<< HEAD
-    @properties = Property.all
-    render :json => @properties
-=======
     # @properties = Property.all('date')  ## Who put this in? What is ('date') intended to do ?
     @properties = Property.all
     respond_to do |format|
       format.html {} # do nothing - this is the default. display as normal html
       format.json {render :json => @properties}
     end
->>>>>>> d73f211e3ac1862be875dbbdb2a23c8df0b7695a
   end
 
   # GET /properties/1

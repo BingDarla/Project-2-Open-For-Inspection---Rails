@@ -4,15 +4,22 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all('date')
-    render :json => @properties
+    # @properties = Property.all('date')  ## Who put this in? What is ('date') intended to do ?
+    @properties = Property.all
+    respond_to do |format|
+      format.html {} # do nothing - this is the default. display as normal html
+      format.json {render :json => @properties}
+    end
   end
 
   # GET /properties/1
   # GET /properties/1.json
   def show
     property = Property.find params[:id]
-    render :json => property
+    respond_to do |format|
+      format.html {}
+      format.json { render :json => property}
+    end
   end
 
   # GET /properties/new
@@ -73,6 +80,6 @@ class PropertiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
       #params.fetch(:property, {})
-      params.require(:property).permit(:address, :suburb, :landsize, :bedrooms, :bathrooms, :private_parking, :expected_price)
+      params.require(:property).permit(:address, :suburb, :landsize, :bedrooms, :bathrooms, :private_parking, :expected_price, :photo)
     end
 end

@@ -35,10 +35,10 @@
 # end
 
 Property.destroy_all
-p1 = Property.create :address => '1 George Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => 500, :bedrooms => 5, :bathrooms => 2.5, :private_parking => 'true', :expected_price => 555000
-p2 = Property.create :address => '1 Pitt Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => 600, :bedrooms => 4, :bathrooms => 2.2, :private_parking => 'true', :expected_price => 855000
-p3 = Property.create :address => '1 Elizabeth Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => 700, :bedrooms => 3, :bathrooms => 4.5, :private_parking => 'true', :expected_price => 1555000
-p4 = Property.create :address => '1 York Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => 800, :bedrooms => 2, :bathrooms => 1.5, :private_parking => 'true', :expected_price => 2555000
+p1 = Property.create :address => '1 George Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => "500", :bedrooms => "5", :bathrooms => "2.5", :private_parking => 'true', :expected_price => "555000"
+p2 = Property.create :address => '1 Pitt Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => "600", :bedrooms => "4", :bathrooms => "2.2", :private_parking => 'true', :expected_price => "855000"
+p3 = Property.create :address => '1 Elizabeth Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => "700", :bedrooms => "3", :bathrooms => "4.5", :private_parking => 'true', :expected_price => "1555000"
+p4 = Property.create :address => '1 York Street, Sydney NSW 2000', :suburb => 'Sydney', :landsize => "800", :bedrooms => "2", :bathrooms => "1.5", :private_parking => 'true', :expected_price => "2555000"
 
 User.destroy_all
 u1 = User.create :name =>'Bing',:email =>'hb@ga.co', :dob => 20000101,:password => 'chicken',:admin => true

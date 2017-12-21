@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20171220222023) do
   create_table "properties", force: :cascade do |t|
     t.text "address"
     t.text "suburb"
-    t.integer "landsize"
+    t.text "landsize"
     t.integer "bedrooms"
     t.float "bathrooms"
     t.boolean "private_parking"
-    t.bigint "expected_price"
+    t.text "expected_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "photo"

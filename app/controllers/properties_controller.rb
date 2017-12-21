@@ -50,15 +50,33 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json
   def update
-    respond_to do |format|
-      if @property.update(property_params)
-        format.html { redirect_to @property, notice: 'Property was successfully updated.' }
-        format.json { render :show, status: :ok, location: @property }
-      else
-        format.html { render :edit }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
-      end
+      # respond_to do |format|
+      #   if @property.update(property_params)
+      #     format.html { redirect_to @property, notice: 'Property was successfully updated.' }
+      #     format.json { render :show, status: :ok, location: @property }
+      #   else
+      #     format.html { render :edit }
+      #     format.json { render json: @property.errors, status: :unprocessable_entity }
+      #   end
+      # end
+    property = Property.find params[:id]
+    # raise
+    if params["property"]["photo"].nil?
+      property.update property_params
+    else
+      cloudinary = Cloudinary::Uploader.upload( params[ "property" ][ "photo" ] )
+      # link = cloudinary["url"]
+      # raise
+      # property.update :photo => link
+      # property.update :photo => cloudinary["url"]  # JOSH FIX
+      property.photo = cloudinary["url"] #John Original Code
+
+
     end
+    # raise
+    property.update property_params #John Original Code
+    redirect_to property
+
   end
 
   # DELETE /properties/1
@@ -80,6 +98,6 @@ class PropertiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
       #params.fetch(:property, {})
-      params.require(:property).permit(:address, :suburb, :landsize, :bedrooms, :bathrooms, :private_parking, :expected_price, :photo)
+      params.require(:property).permit(:address, :suburb, :landsize, :bedrooms, :bathrooms, :private_parking, :expected_price)
     end
 end

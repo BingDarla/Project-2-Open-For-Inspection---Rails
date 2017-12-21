@@ -36,6 +36,8 @@ gem 'bootstrap-sass'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'cloudinary'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

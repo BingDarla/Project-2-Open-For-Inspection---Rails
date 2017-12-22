@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
- 
-before_action :fetch_user
+
+# before_action :fetch_user
 
   private
     def fetch_user

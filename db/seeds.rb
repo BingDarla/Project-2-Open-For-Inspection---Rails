@@ -43,12 +43,25 @@ p4 = Property.create :address => '1 York Street, Sydney NSW 2000', :suburb => 'S
 User.destroy_all
 u1 = User.create :name =>'Bing',:email =>'hb@ga.co', :dob => 20000101,:password => 'chicken',:admin => true
 u2 = User.create :name =>'Tom', :email => 'tom@ga.co',:dob =>20000406, :password => 'chicken'
+u3 = User.create :name =>'John', :email => 'jo@ga.co',:dob =>20100406, :password => 'chicken'
+u4 = User.create :name =>'Damien', :email => 'da@ga.co',:dob =>20000806, :password => 'chicken'
+
 
 Auction.destroy_all
 a1 = Auction.create :price => 1000000
 a2 = Auction.create :price => 1100000
+a3 = Auction.create :price => 2100000
+a4 = Auction.create :price => 900000
+a5 = Auction.create :price => 1300000
+
 
 p1.auctions << a1
 p1.auctions << a2
+p2.auctions << a3
+p3.auctions << a4
+p4.auctions << a5
 u1.auctions << a1
 u2.auctions << a2
+u3.auctions << a3
+u2.auctions << a4
+u4.auctions << a5

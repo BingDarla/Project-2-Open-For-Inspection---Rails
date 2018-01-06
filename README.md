@@ -1,24 +1,7 @@
-# README
+Build a group project with Rails and React
+This back-end will just generate JSON which will be consumed by our front-end through Ajax requests.
+We used PostgreSQL for database and scaffold to mininum the back-end work.
+Heroku version:
+https://young-plains-74805.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

@@ -12,6 +12,12 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr>
+        <td><%= property.address %></td>
+        <td><%= property.suburb %></td>
+        <td><%= property.landsize %></td>
+        <td><%= property.bedrooms %></td>
+        <td><%= property.bathrooms %></td>
+        <td><%= property.expected_price %></td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
